@@ -1,0 +1,42 @@
+import os
+from pathlib import Path
+from time import gmtime ,strftime
+import time
+
+
+#below block of code is used for to create files if we want to practice
+'''
+for i in range (20):
+    actual_time = strftime("%Y-%m-%d %H-%M-%S", gmtime())
+    datafolder = Path('binod/'+  str(actual_time) +'.txt')
+    if i % 2 == 0:
+        with open(datafolder,'w') as f:
+            f.write("my first file is binod file\n")
+            f.write("This file BINOD\n\n")
+            f.write("contains binod three lines\n")
+            time.sleep(1)
+    else :
+        with open(datafolder,'w') as f:
+            f.write("my first file is  aajlns danakd\n")
+            f.write("This file fsknfks v\n\n")
+            f.write("contains sfksn vs v three lines\n")
+            time.sleep(1)
+'''
+
+l =  os.listdir('binod')
+print(type(l))
+
+
+def detect_binod(li):
+    fd =  open('binod/'+li,'r')
+    f = fd.read()
+    if 'binod' in f.lower():
+        return True
+    else :
+        return False
+    
+
+for i in l :
+    flag = detect_binod(i)
+    if flag == True:
+        print(i ,'bonod spam found in this file')
